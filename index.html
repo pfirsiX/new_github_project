@@ -76,10 +76,72 @@
       <li><a href="#">Javascript</a></li>
     </ul>
   </div>
+<br><br>
+<button type="btn btn-info" data-toggle="modal" data-target="#myModal"
+  name="button">popup windows</button>
+    <div class="modal fade" id="myModal" tabindex="1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" type="button" name="button">X</button>
+            <h4>Window header</h4>
+          </div>
+          <div class="modal-body">some smart text</div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal" name="button">close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br><br>
+
+<div class="container">
+  <ul class="nav nav-pills" role="tablist">
+    <li><a href="#home" role="tab" data-toggle="pill">home</a></li>
+    <li><a href="#profile" role="tab" data-toggle="pill">profile</a></li>
+    <li class="active"><a href="#message" role="tab" data-toggle="pill">message</a></li>
+    <li><a href="#settings" role="tab" data-toggle="pill">settings</a></li>
+  </ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane" id="home">home</div>
+  <div role="tabpanel" class="tab-pane" id="profile">profile</div>
+  <div role="tabpanel" class="tab-pane" id="message">message</div>
+  <div role="tabpanel" class="tab-pane" id="settings">settings</div>
+</div>
+</div>
+
+<br><br><br>
+<div class="container">
+  <a href="#" data-toggle="tooltip" title="is enthing wrong?"> hover the cursor</a>
+  <br>
+  <button class="btn btn-success" title="button is not working" data-toggle="tooltip" data-placement="bottom" name="button">hover the cursor</button>
+  <button class="btn btn-success" title="button" data-toggle="tooltip" data-placement="left" name="button">hover the cursor</button>
+  <button class="btn btn-success" title="button" data-toggle="tooltip" data-placement="right" name="button">hover the cursor</button>
+  <button class="btn btn-success" title="button" data-toggle="tooltip" data-placement="top" name="button">hover the cursor</button>
+
+</div>
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script>
+    //$('#myModal').modal();
+    //$('#myModal').on('hidden.bs.modal', function(event){
+      //functions
+      //alert("performed")});
+
+    $('a[data-toggle="pill"]').on('show.bs.tab', function(e){
+      console.log(e.target);//active message
+      console.log(e.relatedTarget);//last active message
+    })
+  </script>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+
 </body>
 </html>
